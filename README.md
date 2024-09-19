@@ -47,9 +47,7 @@ Requirements:
 * `python3` or `python` is required to run option '-c' which copies history from .bash_history
 
 ``` bash
-git clone https://github.com/jotyGill/ezsh
-cd ezsh
-./install.sh -c        # only run with '-c' the first time, running multiple times will duplicate history entries
+bash -c "git clone https://github.com/harunalbayrak/ezsh.git; cd ezsh; ./install.sh -c"
 ```
 This will install the setup under `~/.config/ezsh/`
 Change your terminal's fonts to either "RobotoMono Nerd Font" or "Hack Nerd Font" or "DejaVu Sans Mono Nerd Fonts".
