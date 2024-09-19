@@ -199,6 +199,38 @@ ipgeo() {
     fi
 }
 
+PRELINE="\r\033[A"
+
+random() {
+    echo -e "\033]6;1;bg;red;brightness;$((1 + $RANDOM % 255))\a"$PRELINE
+    echo -e "\033]6;1;bg;green;brightness;$((1 + $RANDOM % 255))\a"$PRELINE
+    echo -e "\033]6;1;bg;blue;brightness;$((1 + $RANDOM % 255))\a"$PRELINE
+}
+
+color() {
+    case $1 in
+    green)
+    echo -e "\033]6;1;bg;red;brightness;57\a"$PRELINE
+    echo -e "\033]6;1;bg;green;brightness;197\a"$PRELINE
+    echo -e "\033]6;1;bg;blue;brightness;77\a"$PRELINE
+    ;;
+    red)
+    echo -e "\033]6;1;bg;red;brightness;270\a"$PRELINE
+    echo -e "\033]6;1;bg;green;brightness;60\a"$PRELINE
+    echo -e "\033]6;1;bg;blue;brightness;83\a"$PRELINE
+    ;;
+    orange)
+    echo -e "\033]6;1;bg;red;brightness;227\a"$PRELINE
+    echo -e "\033]6;1;bg;green;brightness;143\a"$PRELINE
+    echo -e "\033]6;1;bg;blue;brightness;10\a"$PRELINE
+    ;;
+    *)
+    random
+    esac
+}
+
+color
+
 # export PATH="$HOME/Library/Android/sdk/cmdline-tools/latest/bin:$PATH"
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
 # export PATH="$JAVA_HOME/bin:$PATH"
